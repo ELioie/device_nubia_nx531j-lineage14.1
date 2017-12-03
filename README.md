@@ -92,14 +92,18 @@ sudo apt-get install rsync
 
 
 开始编译：
+
 1.设置编译环境
+
 source build/envsetup.sh
 
 2.设置加快编译速度
+
  export USE_CCACHE=1
  
 3.加入root
 export WITH_SU=true
+
 4.设置缓存
 
  ~/Los14/prebuilts/misc/linux-x86/ccache/ccache -M 80G
@@ -116,6 +120,7 @@ export WITH_SU=true
 5.并且开启jack服务。
 
 如何编译到一半失败,请关闭j开启jack或者,手动杀死java服务.不然的话16g内存也不够用.
+
 ./prebuilts/sdk/tools/jack-admin kill-server
 
 ./prebuilts/sdk/tools/jack-admin start-server
