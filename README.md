@@ -68,7 +68,7 @@ sed -i 's/clone-depth="1"//' .repo/manifests/snippets/cm.xml(具体是不是叫c
 1.下载twrp源码,替换自带recovery,https://github.com/omnirom/android_bootable_recovery 
 重命名为recovery，放到bootload/recovery文件夹（放置前请删Bootload里面的recovery文件夹）。
 
-2.下载busybox源码,解压，重命名为busybox放到external文件夹
+2.下载busybox源码,https://github.com/LineageOS/android_external_busybox 解压，重命名为busybox放到external文件夹
 
 3.下载deviceseting源码,解压，重命名为devicesettings放到对应路径https://github.com/LineageOS/android_packages_resources_devicesettings 放到
 packages/resources文件夹。
@@ -81,7 +81,7 @@ packages/resources文件夹。
 
 7.https://github.com/LineageOS/android_external_stlport  解压，重命名为stlport，放到external文件夹。
 
-8.下载nfc驱动。
+8.https://github.com/Tlntin/vendor_nxp-nfc-lineage14.1 下载nfc驱动。
 
 先安装这个,不然编译到一半会失败
 
