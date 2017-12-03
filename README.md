@@ -5,8 +5,11 @@ Device configuration for Nubia Z11
 ==============
 1,用清华镜像同步源码。
 mkdir ~/bin
+
 PATH=~/bin:$PATH
+
 curl https://mirrors.tuna.tsinghua.edu.cn/git/git-repo> ~/bin/repo
+
 chmod a+x ~/bin/repo
 
 2.repo的运行过程中会尝试访问官方的git源更新自己，如果想使用tuna的镜像源进行更新，可以将如下内容复制到你的~/.bashrc里
@@ -44,6 +47,7 @@ repo sync(同步失败一次就继续用这个命令同步)
 同步cm-14.1及以下版本，在终端中输入：
 
 sed -i 's/clone-depth="1"//' .repo/manifest.xml
+
 sed -i 's/clone-depth="1"//' .repo/manifests/snippets/cm.xml(具体是不是叫cm.xml得看实际情况)
 
 同步完源码后,需要下这些东西，路径没有就自己建一个。这个decice是解压重命名为nx53j，放到device/nubia目录。
@@ -64,6 +68,7 @@ packages/resources文件夹。
 
 8.下载nfc驱动。
 先安装这个,不然编译到一半会失败
+
 sudo apt-get install rsync
 
 
@@ -87,16 +92,21 @@ export WITH_SU=true
  export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx16000m"（本人内存8g，所以这里允许内存填8192M）
 
 4.开安装jack，
+
 进prebuilts/sdk/tools文件夹打开终端，
+
 ./jack-admin install-server jack-launcher.jar jack-server-4.8.ALPHA.jar
 
 5.并且开启jack服务。
+
 如何编译到一半失败,请关闭j开启jack或者,手动杀死java服务.不然的话16g内存也不够用.
 ./prebuilts/sdk/tools/jack-admin kill-server
+
 ./prebuilts/sdk/tools/jack-admin start-server
 
 6.编译开始
 breakfast  nx531j
+
 make -j8
 
 注意：如何编译到一半失败,请关闭j开启jack或者,手动杀死java服务.不然的话16g内存也不够用.
