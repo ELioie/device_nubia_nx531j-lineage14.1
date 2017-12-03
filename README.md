@@ -132,6 +132,7 @@ breakfast  nx531j
 make -j8
 
 注意：如何编译到一半失败,请关闭j开启jack或者,手动杀死java服务.不然的话16g内存也不够用.
+
 ./prebuilts/sdk/tools/jack-admin kill-server
 
 ./prebuilts/sdk/tools/jack-admin start-server
