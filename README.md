@@ -82,6 +82,7 @@ packages/resources文件夹。
 7.https://github.com/LineageOS/android_external_stlport  解压，重命名为stlport，放到external文件夹。
 
 8.下载nfc驱动。
+
 先安装这个,不然编译到一半会失败
 
 sudo apt-get install rsync
