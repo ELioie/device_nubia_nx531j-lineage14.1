@@ -2,6 +2,7 @@ Copyright (C) 2017 The LineageOS Project
 
 Device configuration for Nubia Z11
 ==============
+
 1,用清华镜像同步源码。
 
 mkdir ~/bin
@@ -55,6 +56,7 @@ repo sync(同步失败一次就继续用这个命令同步)
 异常处理
 
 对于有些Lineage的prebuild仓库，因为使用了clone-depth="1"导致了HTTP协议下同步出现错误fatal: dumb http transport does not support --depth，
+
 解决的办法如下：
 
 同步cm-14.1及以下版本，在终端中输入：
@@ -66,12 +68,14 @@ sed -i 's/clone-depth="1"//' .repo/manifests/snippets/cm.xml(具体是不是叫c
 同步完源码后,需要下这些东西，路径没有就自己建一个。这个decice是解压重命名为nx53j，放到device/nubia目录。
 
 1.下载twrp源码,替换自带recovery,https://github.com/omnirom/android_bootable_recovery 
+
 重命名为recovery，放到bootload/recovery文件夹（放置前请删Bootload里面的recovery文件夹）。
 
 2.下载busybox源码,https://github.com/LineageOS/android_external_busybox 解压，重命名为busybox放到external文件夹
 
-3.下载deviceseting源码,解压，重命名为devicesettings放到对应路径https://github.com/LineageOS/android_packages_resources_devicesettings 放到
-packages/resources文件夹。
+3.下载deviceseting源码,解压，重命名为devicesettings放到对应路径https://github.com/LineageOS/android_packages_resources_devicesettings 
+
+放到packages/resources文件夹。
 
 4.下载vendor,https://github.com/Tlntin/vendor_nubia_nx531j-lineage14.1 解压重命名为nx531j，放到vendor/nubia文件夹下面。
 
@@ -102,6 +106,7 @@ source build/envsetup.sh
  export USE_CCACHE=1
  
 3.加入root
+
 export WITH_SU=true
 
 4.设置缓存
@@ -138,6 +143,7 @@ make -j8
 ./prebuilts/sdk/tools/jack-admin start-server
 
 7.打包
+
 mka bacon
 
 
